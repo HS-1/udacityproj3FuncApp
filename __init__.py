@@ -6,6 +6,7 @@ from datetime import datetime
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 import settings
+import json
 
 def main(msg: func.ServiceBusMessage):
 
