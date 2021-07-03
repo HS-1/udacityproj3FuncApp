@@ -46,4 +46,5 @@ def main(msg: func.ServiceBusMessage):
         logging.error(error)
     finally:
         # TODO: Close connection
-        conn.close
+        cursor.close()
+        conn.close()
