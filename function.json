@@ -6,7 +6,7 @@
       "type": "serviceBusTrigger",
       "direction": "in",
       "queueName": "notificationqueue",
-      "connection": "hsproj3servbus"
+      "connection": "Endpoint=sb://hsproj3servbus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=QtzwV6qquhijzlp9MkyKKOF14tRRz1V5bfeov8/9DaU="
       //"connection": "Endpoint=sb://hsproj3servbus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=b60eeDPUEHC30PrwHKgQzNArr7I8/NvFskXHzPEirsw="
     }
   ]
