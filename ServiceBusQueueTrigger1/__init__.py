@@ -18,11 +18,11 @@ def main(msg: func.ServiceBusMessage):
     try:
         # TODO: Get notification message and subject from database using the notification_id
         # Fetch all rows from table
-        #cursor.execute("SELECT * FROM notification where id={};".format(notification_id))
-        #rows = cursor.fetchall()
+        cursor.execute("SELECT * FROM notification where id={};".format(notification_id))
+        rows = cursor.fetchall()
 
         # Print all rows
-        #for row in rows:
+        for row in rows:
             print("Data row = (%s, %s, %s)" %(str(row[0]), str(row[1]), str(row[2])))
             # TODO: Get attendees email and name
             # TODO: Loop through each attendee and send an email with a personalized subject
