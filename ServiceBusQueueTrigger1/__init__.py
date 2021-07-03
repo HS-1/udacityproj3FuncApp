@@ -29,11 +29,11 @@ def main(msg: func.ServiceBusMessage):
             attendees = cursor.execute("SELECT * FROM attendee")
             for attendee in attendees:
                 subject = '{}: {}'.format(attendee.first_name, row.subject)
-                message = Mail(
-                    from_email=settings.adminEmail,
-                    to_emails=attendee.email,
-                    subject=subject,
-                    plain_text_content=row.message)
+                #message = Mail(
+                #    from_email='in,
+                #    to_emails=attendee.email,
+                #    subject=subject,
+                #    plain_text_content=row.message)
                 #sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
                 #sg.send(message)
         # TODO: Update the notification table by setting the completed date and updating the status with the total number of attendees notified
