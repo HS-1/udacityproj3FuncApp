@@ -13,7 +13,7 @@ def main(msg: func.ServiceBusMessage):
     notification_id = int(msg.get_body().decode('utf-8'))
     logging.info('Python ServiceBus queue trigger processed message: %s',notification_id)
     # TODO: Get connection to database
-    conn = psycopg2.connect(dbname='techconfdb', user='serverAdmin@hsproj3dbserver', host='hsproj3dbserver.postgres.database.azure.com', password='P@ssword', port='5432', sslmode='true')
+    conn = psycopg2.connect(dbname='techconfdb', user='serverAdmin@hsproj3dbserver', host='hsproj3dbserver.postgres.database.azure.com', password='P@ssword')
     cursor = conn.cursor()
     try:
         # TODO: Get notification message and subject from database using the notification_id
