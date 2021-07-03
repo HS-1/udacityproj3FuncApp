@@ -1,12 +1,7 @@
 {
-  "scriptFile": "__init__.py",
-  "bindings": [
-    {
-      "name": "msg",
-      "type": "serviceBusTrigger",
-      "direction": "in",
-      "queueName": "notificationqueue",
-      "connection": "Endpoint=sb://hsproj3servbus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=QtzwV6qquhijzlp9MkyKKOF14tRRz1V5bfeov8/9DaU="
-    }
-  ]
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "Endpoint=sb://hsproj3servbus2.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V4ikQOArD7V5GZ6XDjHwpWMolHXu2cGA57R9iJ1x9Hc=",
+    "FUNCTIONS_WORKER_RUNTIME": "python"
+  }
 }
