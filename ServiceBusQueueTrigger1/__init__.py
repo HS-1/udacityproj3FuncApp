@@ -23,22 +23,22 @@ def main(msg: func.ServiceBusMessage):
 
         # Print all rows
         #for row in rows:
-            #print("Data row = (%s, %s, %s)" %(str(row[0]), str(row[1]), str(row[2])))
+            print("Data row = (%s, %s, %s)" %(str(row[0]), str(row[1]), str(row[2])))
             # TODO: Get attendees email and name
             # TODO: Loop through each attendee and send an email with a personalized subject
-            #attendees = cursor.execute("SELECT * FROM attendee")
-            #for attendee in attendees:
-                #subject = '{}: {}'.format(attendee.first_name, row.subject)
-                #message = Mail(
-                #    from_email='in,
-                #    to_emails=attendee.email,
-                #    subject=subject,
-                #    plain_text_content=row.message)
+            attendees = cursor.execute("SELECT * FROM attendee")
+            for attendee in attendees:
+                subject = '{}: {}'.format(attendee.first_name, row.subject)
+                message = Mail(
+                    from_email='info@test.com',
+                    to_emails=attendee.email,
+                    subject=subject,
+                    plain_text_content=row.message)
                 #sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
                 #sg.send(message)
         # TODO: Update the notification table by setting the completed date and updating the status with the total number of attendees notified
         date = datetime.utcnow()
-        status = 'Notified {} attendees'.format(5)
+        status = 'Notified {} attendees'.format(len(attendees.details))
         cursor.execute("UPDATE notification SET completed_date=%s, status=%s WHERE id=%s;", (date, status, notification_id))
         conn.commit()
 
